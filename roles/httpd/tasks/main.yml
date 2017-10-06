@@ -1,0 +1,17 @@
+---
+- name: Install httpd and modules
+  yum: name={{ item }} state=latest
+  with_items:
+    - httpd
+    - openssl
+    - mod_ssl
+  tags: [httpd]
+
+- name: Make document root
+  file: path={{ item }} state=directory mode=0755 owner={{ user['name'] }} group={{ user['group'] }}
+  with_items: 
+    - "{{ document_root }}"
+
+- name: Make httpd enabled
+  service: name=httpd enabled=yes use=service
+  tags: [httpd]

@@ -1,0 +1,6 @@
+Host cinraw
+  HostName 192.168.99.100
+  User docker
+  UserKnownHostsFile /dev/null
+  IdentityFile ~/.docker/machine/machines/cinraw/id_rsa
+  StrictHostKeyChecking no

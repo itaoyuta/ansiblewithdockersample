@@ -1,0 +1,9 @@
+---
+user:
+  name: cinra
+  password: hogehoge
+  group: web
+
+mysql:
+  dbname: cinra
+  root_password: hugahuga
